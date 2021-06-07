@@ -1,11 +1,11 @@
 # Comandos úteis
 
-Importar base quando usando WSL2
+## Importar base quando usando WSL2
 ```
 docker exec -i <container_id> mariadb -udefault -psecret default < /mnt/c/Users/Rochele/Downloads/database.sql
 ```
 
-Importar base já modificando ela
+## Importar base já modificando ela
 ```
 # 1 - nome do banco
 # 2 - nome do arquivo sql
@@ -37,3 +37,35 @@ function fumadocker() {
     fi
 }
 ```
+
+# Instalar tema para o ZSH
+
+Execute o script de instalação do ZSH Tools + Pluguins
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/master/tools-zsh-install.sh)" -y
+
+```
+Nessa seguinte tela entre com exit e tecle enter para o sript continuar.
+
+## Instalando
+
+```
+sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+```
+
+Crie o link simbólico
+```
+sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+```
+## Ativando o tema
+
+Digite code code ~/.zshrc e tecle enter que abrirá o VS Code para editar o arquivo, edite o campo `ZSH_THEME="fino"` para `ZSH_THEME="spaceship"` e salve. Pronto, você acabou de mudar o tema.
+
+## Pluguins inclusos
+
+Esses são os plugins inclusos e abaixo explico como funciona cada um deles:
+- **zdharma/fast-syntax-highlighting**: Adiciona syntax highlighting na hora da escrita de comandos que facilita principalmente em reconhecer comandos que foram digitados de forma incorreta.
+- **zsh-users/zsh-autosuggestions**: Sugere comandos baseados no histórico de execução conforme você vai digitando.
+- **zsh-users/zsh-completions**: Adiciona milhares de completitions para ferramentas comuns como Yarn, Homebrew, NVM, Node, etc, para você precisar apenas apertar TAB para completar comandos.
+
+Obs.: ainda jogo isso autmático no Laradock :D
