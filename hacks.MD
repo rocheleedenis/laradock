@@ -5,6 +5,11 @@
 docker exec -i <container_id> mariadb -udefault -psecret default < /mnt/c/Users/Rochele/Downloads/database.sql
 ```
 
+## Erro: Failed to save file, permision denied
+```
+sudo chown -R user /home/user/caminho/do/projeto
+```
+
 ## Importar base já modificando ela
 ```
 # 1 - nome do banco
