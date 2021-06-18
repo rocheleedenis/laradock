@@ -43,40 +43,10 @@ function fumadocker() {
 }
 ```
 
-# Instalar tema para o ZSH
-
-Execute o script de instalação do ZSH Tools + Pluguins
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/master/tools-zsh-install.sh)" -y
+## Entrando no workspace usando o ZSH
 
 ```
-Nessa seguinte tela entre com exit e tecle enter para o sript continuar.
-
-## Instalando
-
+docker-compose exec --user=laradock workspace zsh
 ```
-sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-```
-
-Crie o link simbólico
-```
-sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-```
-## Ativando o tema
-
-Digite code code ~/.zshrc e tecle enter que abrirá o VS Code para editar o arquivo, edite o campo `ZSH_THEME="fino"` para `ZSH_THEME="spaceship"` e salve. Pronto, você acabou de mudar o tema.
-Adicione essas linhas no final do arquivo
-```
-zinit light zdharma/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-```
-
-## Pluguins inclusos
-
-Esses são os plugins inclusos e abaixo explico como funciona cada um deles:
-- **zdharma/fast-syntax-highlighting**: Adiciona syntax highlighting na hora da escrita de comandos que facilita principalmente em reconhecer comandos que foram digitados de forma incorreta.
-- **zsh-users/zsh-autosuggestions**: Sugere comandos baseados no histórico de execução conforme você vai digitando.
-- **zsh-users/zsh-completions**: Adiciona milhares de completitions para ferramentas comuns como Yarn, Homebrew, NVM, Node, etc, para você precisar apenas apertar TAB para completar comandos.
 
 Obs.: ainda jogo isso autmático no Laradock :D
