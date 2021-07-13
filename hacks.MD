@@ -9,6 +9,14 @@ docker exec -i <container_id> mariadb -udefault -psecret default < /mnt/c/Users/
 ```
 sudo chown -R user /home/user/caminho/do/projeto
 ```
+## Erros de importação/exportação no storage: Permission denied e Impossible to create the root directory 
+```
+docker-compose exec nginx id www-data
+```
+Use o uid e gid e execute:
+```
+sudo chown -R 82:82 projeto
+```
 
 ## Importar base já modificando ela
 ```
