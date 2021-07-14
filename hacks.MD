@@ -44,6 +44,7 @@ function fumadocker() {
     	echo 'Alterando senhas dos usuários para "a"...'
     	docker exec -i $3 mariadb -udefault -psecret -D $1 -e 'UPDATE users SET password = "$2y$10$tozlEAQSWlsAEWxbEwKa6.EGER4K3bpM0mq/VeJc4WRjVEPhZ535K";'
         echo 'Alterando domínio dos e-mails'
+		docker exec -i $3 mariadb -udefault -psecret -D $1 -e "UPDATE users SET email = REPLACE(email, ('drxis'), 'teste1') WHERE email LIKE '%drxis%';UPDATE users SET email = REPLACE(email, ('grupokpg'), 'teste') WHERE email LIKE '%grupokpg%';"
         docker exec -i $3 mariadb -udefault -psecret -e 'SET FOREIGN_KEY_CHECKS = 1;'
         docker exec -i $3 mariadb -udefault -psecret -e "SET @@sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';"
     	echo 'OK'
